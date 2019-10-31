@@ -1,0 +1,41 @@
+chat:
+  MAX_LENGTH: 40
+  BATCH_SIZE: 512
+  BUFFER_SIZE: 20000
+  resume_auto: True
+  resume_manual: False
+  manual_ckpt_filename: "smth"
+  manual_vocab_filename: "smth.txt"
+  language: english
+
+prepare_data:
+  MAX_SAMPLES: 10000
+  vocabulary_size: 10000
+  data_filename: "metalwoz_full.csv"
+
+train:
+  MAX_LENGTH: 40
+  BATCH_SIZE: 512
+  BUFFER_SIZE: 20000
+  EPOCHS: 100
+  resume_auto: True
+  resume_manual: False
+  manual_ckpt_filename: "smth.ckpt"
+  manual_vocab_filename: "smth.txt"
+  language: english
+
+model:
+  NUM_LAYERS: 3
+  # D_MODEL % NUM_HEADS == 0, because D_MODEL % NUM_HEADS = depth
+  # actually d_model is hard-coded from the dimensions of fastext model
+  # which  is 300
+  D_MODEL: 300
+  NUM_HEADS: 3
+  UNITS: 512
+  DROPOUT: 0.3
+  lr:
+    initial_LR: 0.01
+    decay_steps: 100
+    decay_rate: 0.001
+    staircase: False
+    warmup_steps: 700
