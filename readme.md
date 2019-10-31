@@ -1,5 +1,5 @@
 ## Multi-Attention Transformer for Personal Chatbots on Multilingual Datasets
-**Author: Lygerakis Fotios | Machine Learning Researcher**
+**Author: Lygerakis Fotios**
 
 **Research Associate at NCRS "Demokritos"**
  
